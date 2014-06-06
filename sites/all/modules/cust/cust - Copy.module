@@ -1,0 +1,595 @@
+<?php
+//////////////////////////////////////////////////////////////////////////////////////////////
+function cust_form_alter(&$form,$form_state,$form_id){
+  //print $form_id;
+  if($form_id == 'photos_node_form') {
+    //print_r($form); die();
+    //$form['field_purchased']['#access'] = 0;
+  }
+  
+  //alter story
+  if($form_id == 'story_node_form') {
+    //print_r($form); die();
+    //$form['field_purchased']['#access'] = 0;
+  }
+  
+  if($form_id == 'user_register_form') {
+    //print_r($form); die();
+    $form['#validate'][] = 'cust_postal_code_validate_function';
+    $form['#submit'][0] = 'cust_user_register_submit';
+    
+  }
+  
+  if($form_id == 'user_profile_form') {
+    //print_r($form); die();
+    $form['#validate'][] = 'cust_postal_code_validate_function';
+    //$form['#submit'][0] = 'cust_user_profile_form_submit';
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+function cust_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  
+ $linkt = url('node/84');
+  // Add a checkbox to registration form about agreeing to terms of use.
+  $form['terms_of_use'] = array(
+    '#type' => 'checkbox',
+    '#description' => t('Yes, I have read, understand and agree to the <a class="colorbox-node" target="_blank" href="'.$linkt.'?width=600&height=600">Terms and Conditions</a> . <span class="form-required" title="This field is required.">*</span>'),
+    '#required' => TRUE,
+    '#weight' => 11,
+    '#prefix' => '<p>',
+    '#suffix' => '</p>',
+  );
+ 
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+function cust_preprocess_page(&$vars, $hook) {
+  // Removes a tab called 'File browser, change with your own tab title
+  /*global $user;
+  if ( !empty($user->roles[3])){
+   cust_removetab('Customer Orders', $vars);
+  }*/
+      // Change label a tab called 'File browser, change with your own tab title
+  if ( arg(0) == 'user' ){ 
+    cust_changelabeltab('Pages/Threads', 'Saved pages', $vars);
+    cust_changelabeltab('Categories', 'Email Alerts', $vars);
+    }
+
+}
+/* *********** REMOVE TABS ************ */
+function cust_removetab($label, &$vars) {
+  /*  
+  // Remove from primary tabs
+ // $i = 0;
+  if (is_array($vars['tabs']['#primary'])) {
+    foreach ($vars['tabs']['#primary'] as $k => $primary_tab) {
+      if ($primary_tab['#link']['title'] == $label) {
+        unset($vars['tabs']['#primary'][$k]);
+      }
+    //  ++$i;
+    }
+  }
+
+  // Remove from secundary tabs
+  $i = 0;
+  if (is_array($vars['tabs']['#secundary'])) {
+    foreach ($vars['tabs']['#secundary'] as $secundary_tab) {
+      if ($secundary_tab['#link']['title'] == $label) {
+        unset($vars['tabs']['#secundary'][$i]);
+      }
+      ++$i;
+    }
+  }
+  */
+}
+/* **********CHANGE TABS LABEL*************  */
+function cust_changelabeltab($label, $clabel, &$vars) {
+//print_r($vars['tabs']);die();
+  //$i = 0;
+  //CHANGE LABEL primary tabs
+  /*if (is_array($vars['tabs']['#primary'])) {
+    foreach ($vars['tabs']['#primary'] as $k => $primary_tab) {
+      if ($primary_tab['#link']['title'] == $label) {
+        //unset($vars['tabs']['#primary'][$i]);
+        $vars['tabs']['#primary'][$k]['#link']['title'] = $clabel;
+      }
+      //++$i;
+    }
+  }*/
+  
+  //CHANGE LABEL second tabs
+  if (is_array($vars['tabs']['#secondary'])) {
+    foreach ($vars['tabs']['#secondary'] as $k => $secondary_tab) {
+      if ($secondary_tab['#link']['title'] == $label) {
+        //unset($vars['tabs']['#primary'][$i]);
+        $vars['tabs']['#secondary'][$k]['#link']['title'] = $clabel;
+      }
+      //++$i;
+    }
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+function cust_postal_code_validate_function($form, &$form_state){
+
+   $zip = isset($form_state['values']['field_postal_code']['und'][0]['value']) ? $form_state['values']['field_postal_code']['und'][0]['value'] : '';
+   preg_replace('/[^a-z0-9]+/i','',$zip);
+   $len = strlen($zip);
+   $check = 1;
+   if($len > 1){
+        
+        $zip_array = array();
+        
+        for ($x=0; $x<$len; $x++)
+        {
+            $kt = substr($zip, $x, 1);
+            if(checknumber($kt) || checkletter($kt)){
+                $zip_array[] = $kt;
+            }
+            
+        } 
+        //print_r($zip_array); die();
+
+        /*if(checknumber($zip_array[0])){
+            $check = 1;
+        }else{
+            $check = 0;
+        }
+        
+        if(checkletter($zip_array[0])){
+            $check1 = 1;
+        }else{
+            $check1 = 0;
+        }*/
+        
+        
+        if(checkletter($zip_array[0])){
+             for ($x=0; $x<$len; $x++){
+                if($x%2 == 0){
+                    if(!checkletter($zip_array[$x])) $check = 0;
+                }else{
+                    if(!checknumber($zip_array[$x])) $check = 0;
+                }
+             }    
+        }else{
+             for ($x=0; $x<$len; $x++){
+                if($x%2 == 0){
+                    if(!checknumber($zip_array[$x])) $check = 0;
+                }else{
+                    if(!checkletter($zip_array[$x])) $check = 0;
+                }
+             }    
+        }
+        
+        
+   }else{
+    $check = 0;
+   }
+   //print $zip_array[0]; print '<br>';
+   //print $check; print '<br>';
+   //print $check1; 
+   //die();
+   if(!$check){
+        form_set_error('field_postal_code', 'Postal code is invalid');
+   }
+   
+    
+}
+
+function checkletter($chs){
+    $alphas_up = range('A', 'Z');
+    $alphas_low = range('a', 'z');
+    $k = 0;
+    for ($x=0; $x<26; $x++){
+       if(($chs == $alphas_up[$x]) || ($chs == $alphas_low[$x])){
+            $k = 1;
+       }
+    }
+    
+    return $k;
+}
+function checknumber($chs){
+    $k = 0;
+    if(is_numeric($chs)){
+    $chs = (int)$chs;
+    for ($x=0; $x<10; $x++){
+       if($chs == $x){
+            $k = 1;
+       }
+    }
+    }
+    
+    return $k;
+}
+function _cust_check_purchased($nid_refer){
+    global $user;
+    /*if ($user->uid){
+        $query1 = db_select('node', 'n');
+        $query1->leftJoin('field_data_field_photo', 'p', 'p.entity_id = n.nid');
+        $query1->condition('n.type', 'purchased');
+        $query1->condition('n.uid', $user->uid);
+        $query1->condition('p.field_photo_nid', $nid_refer);
+        $query1->fields('n', array('nid'));
+        $result1 = $query1->execute()->fetchObject();//get object row first
+        if($result1){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }else{
+        return false;
+    }*/
+    if ($user->uid){
+        $nid_pp = db_select('field_data_field_paid_photos', 'pp')
+        ->condition('field_paid_photos_nid', $nid_refer)
+        ->condition('entity_id', $user->uid)
+        ->fields('pp', array('field_paid_photos_nid'))->execute()->fetchField();
+        if($nid_pp){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }else{
+        return false;
+    }
+    
+}
+
+function cust_purchase_link_form($form, &$form_state, $nid_story) {
+    global $base_url;
+    $urls = $base_url.'/content/payment';
+    $form['link_purchase']['#method'] = 'post';
+    $form['link_purchase']['#action'] = $urls;
+    
+     $form['link_purchase']['submit'] = array(
+    '#type' => 'submit',
+    '#name' => 'submit',
+    '#value' => t('Payment for download original picture'),
+    '#submit' => array('cust_purchase_form_link_submit'),
+    );
+  $form['link_purchase']['nid_story'] = array(
+    '#type' => 'hidden',
+    '#value' => $nid_story,
+  );
+  return $form;
+}
+function cust_purchase_form_link_submit($form, &$form_state) {
+    
+}
+function cust_user_register_submit($form, &$form_state){
+    //print_r($form_state);die();
+    $admin = $form_state['values']['administer_users'];
+
+  if (!variable_get('user_email_verification', TRUE) || $admin) {
+    $pass = $form_state['values']['pass'];
+  }
+  else {
+    $pass = user_password();
+  }
+  $notify = !empty($form_state['values']['notify']);
+
+  // Remove unneeded values.
+  form_state_values_clean($form_state);
+
+  $form_state['values']['pass'] = $pass;
+  $form_state['values']['init'] = $form_state['values']['mail'];
+
+  $account = $form['#user'];
+
+  entity_form_submit_build_entity('user', $account, $form, $form_state);
+
+  // Populate $edit with the properties of $account, which have been edited on
+  // this form by taking over all values, which appear in the form values too.
+  $edit = array_intersect_key((array) $account, $form_state['values']);
+  $account = user_save($account, $edit);
+  
+  
+  
+  
+  //print_r($account);die();
+  $max_sid = 0;
+  $subs = db_select('subscriptions', 's')
+  ->fields('s', array('sid'))
+  ->execute();
+  while($record = $subs->fetchAssoc()) {
+      if($record['sid'] > $max_sid){
+        $max_sid = $record['sid'];
+      }
+  }
+  $max_sid++;
+  
+  
+  /////////////////////////////////////////////////////////
+  if($account->field_business['und'][0]['value'] == 1){
+    $subs1 = db_select('subscriptions', 's')
+  ->fields('s', array('field','value', 'recipient_uid'))
+  ->condition('field', 'tid')
+  ->condition('value', 1)
+  ->condition('recipient_uid', $account->uid)
+  ->execute()->fetchAssoc();
+  
+  if(!$subs1){
+    $field_business = db_insert('subscriptions') // Table name no longer needs {}
+    ->fields(array(
+      'sid' => $max_sid,
+      'module' => 'node',
+      'field' => 'tid',
+      'value' => 1,
+      'recipient_uid' => $account->uid,
+      'send_interval' => 1,
+      'author_uid' => -1,
+      'send_updates' => 1,
+      'send_comments' => 1,
+    ))
+    ->execute();
+    if($field_business){
+        $max_sid++;
+    }
+  }
+    
+  }
+ 
+ ///////////////////////////////////////////////////////////////////// 
+  if($account->field_exclusive_offers['und'][0]['value'] == 1){
+    $subs1 = db_select('subscriptions', 's')
+  ->fields('s', array('field','value', 'recipient_uid'))
+  ->condition('field', 'tid')
+  ->condition('value', 47)
+  ->condition('recipient_uid', $account->uid)
+  ->execute()->fetchAssoc();
+    if(!$subs1){
+         $field_exclusive_offers = db_insert('subscriptions') // Table name no longer needs {}
+    ->fields(array(
+      'sid' => $max_sid,
+      'module' => 'node',
+      'field' => 'tid',
+      'value' => 47,
+      'recipient_uid' => $account->uid,
+      'send_interval' => 1,
+      'author_uid' => -1,
+      'send_updates' => 1,
+      'send_comments' => 1,
+    ))
+    ->execute();
+        if($field_exclusive_offers){
+            $max_sid++;
+        }
+    }
+   
+  }
+  
+  /////////////////////////////////////////////////////////
+  if($account->field_community['und'][0]['value'] == 1){
+    $subs1 = db_select('subscriptions', 's')
+  ->fields('s', array('field','value', 'recipient_uid'))
+  ->condition('field', 'tid')
+  ->condition('value', 30)
+  ->condition('recipient_uid', $account->uid)
+  ->execute()->fetchAssoc();
+    if(!$subs1){
+        $field_community = db_insert('subscriptions') // Table name no longer needs {}
+    ->fields(array(
+      'sid' => $max_sid,
+      'module' => 'node',
+      'field' => 'tid',
+      'value' => 30,
+      'recipient_uid' => $account->uid,
+      'send_interval' => 1,
+      'author_uid' => -1,
+      'send_updates' => 1,
+      'send_comments' => 1,
+    ))
+    ->execute();
+        if($field_community){
+            $max_sid++;
+        }
+    }
+    
+  }
+  
+  ///////////////////////////////////////////////////////
+  if($account->field_local_new_videos['und'][0]['value'] == 1){
+    $subs1 = db_select('subscriptions', 's')
+  ->fields('s', array('field','value', 'recipient_uid'))
+  ->condition('field', 'tid')
+  ->condition('value', 48)
+  ->condition('recipient_uid', $account->uid)
+  ->execute()->fetchAssoc();
+    if(!$subs1){
+        $field_local_new_videos = db_insert('subscriptions') // Table name no longer needs {}
+    ->fields(array(
+      'sid' => $max_sid,
+      'module' => 'node',
+      'field' => 'tid',
+      'value' => 48,
+      'recipient_uid' => $account->uid,
+      'send_interval' => 1,
+      'author_uid' => -1,
+      'send_updates' => 1,
+      'send_comments' => 1,
+    ))
+    ->execute();
+        if($field_local_new_videos){
+            $max_sid++;
+        }
+    }
+    
+  }
+  
+  //////////////////////////////////////////////////////
+  if($account->field_contests['und'][0]['value'] == 1){
+    $subs1 = db_select('subscriptions', 's')
+  ->fields('s', array('field','value', 'recipient_uid'))
+  ->condition('field', 'tid')
+  ->condition('value', 50)
+  ->condition('recipient_uid', $account->uid)
+  ->execute()->fetchAssoc();
+    if(!$subs1){
+        $field_contests = db_insert('subscriptions') // Table name no longer needs {}
+    ->fields(array(
+      'sid' => $max_sid,
+      'module' => 'node',
+      'field' => 'tid',
+      'value' => 50,
+      'recipient_uid' => $account->uid,
+      'send_interval' => 1,
+      'author_uid' => -1,
+      'send_updates' => 1,
+      'send_comments' => 1,
+    ))
+    ->execute();
+        if($field_contests){
+            $max_sid++;
+        }
+    }
+    
+  }
+  
+  //////////////////////////////////////////////////////////////////////////
+  if($account->field_milton_villager_new_issues['und'][0]['value'] == 1){
+     $subs1 = db_select('subscriptions', 's')
+  ->fields('s', array('field','value', 'recipient_uid'))
+  ->condition('field', 'tid')
+  ->condition('value', 49)
+  ->condition('recipient_uid', $account->uid)
+  ->execute()->fetchAssoc();
+    if(!$subs1){
+        $field_milton_villager_new_issues = db_insert('subscriptions') // Table name no longer needs {}
+    ->fields(array(
+      'sid' => $max_sid,
+      'module' => 'node',
+      'field' => 'tid',
+      'value' => 49,
+      'recipient_uid' => $account->uid,
+      'send_interval' => 1,
+      'author_uid' => -1,
+      'send_updates' => 1,
+      'send_comments' => 1,
+    ))
+    ->execute();
+        if($field_milton_villager_new_issues){
+            $max_sid++;
+        }
+    }
+    
+  }
+  
+  ///////////////////////////////////////////////////////
+  if($account->field_culture['und'][0]['value'] == 1){
+    $subs1 = db_select('subscriptions', 's')
+  ->fields('s', array('field','value', 'recipient_uid'))
+  ->condition('field', 'tid')
+  ->condition('value', 29)
+  ->condition('recipient_uid', $account->uid)
+  ->execute()->fetchAssoc();
+    if(!$subs1){
+        $field_culture = db_insert('subscriptions') // Table name no longer needs {}
+    ->fields(array(
+      'sid' => $max_sid,
+      'module' => 'node',
+      'field' => 'tid',
+      'value' => 29,
+      'recipient_uid' => $account->uid,
+      'send_interval' => 1,
+      'author_uid' => -1,
+      'send_updates' => 1,
+      'send_comments' => 1,
+    ))
+    ->execute();
+        if($field_culture){
+            $max_sid++;
+        }
+    }
+    
+  }
+  
+  ////////////////////////////////////////////////////
+  if($account->field_sports['und'][0]['value'] == 1){
+    $subs1 = db_select('subscriptions', 's')
+  ->fields('s', array('field','value', 'recipient_uid'))
+  ->condition('field', 'tid')
+  ->condition('value', 28)
+  ->condition('recipient_uid', $account->uid)
+  ->execute()->fetchAssoc();
+    if(!$subs1){
+        $field_sports = db_insert('subscriptions') // Table name no longer needs {}
+    ->fields(array(
+      'sid' => $max_sid,
+      'module' => 'node',
+      'field' => 'tid',
+      'value' => 28,
+      'recipient_uid' => $account->uid,
+      'send_interval' => 1,
+      'author_uid' => -1,
+      'send_updates' => 1,
+      'send_comments' => 1,
+    ))
+    ->execute();
+        if($field_sports){
+            $max_sid++;
+        }
+    }
+    
+  }
+  
+
+
+
+
+  
+  
+
+  // Terminate if an error occurred during user_save().
+  if (!$account) {
+    drupal_set_message(t("Error saving user account."), 'error');
+    $form_state['redirect'] = '';
+    return;
+  }
+  $form_state['user'] = $account;
+  $form_state['values']['uid'] = $account->uid;
+
+  watchdog('user', 'New user: %name (%email).', array('%name' => $form_state['values']['name'], '%email' => $form_state['values']['mail']), WATCHDOG_NOTICE, l(t('edit'), 'user/' . $account->uid . '/edit'));
+
+  // Add plain text password into user account to generate mail tokens.
+  $account->password = $pass;
+
+  // New administrative account without notification.
+  $uri = entity_uri('user', $account);
+  if ($admin && !$notify) {
+    drupal_set_message(t('Created a new user account for <a href="@url">%name</a>. No e-mail has been sent.', array('@url' => url($uri['path'], $uri['options']), '%name' => $account->name)));
+  }
+  // No e-mail verification required; log in user immediately.
+  elseif (!$admin && !variable_get('user_email_verification', TRUE) && $account->status) {
+    _user_mail_notify('register_no_approval_required', $account);
+    $form_state['uid'] = $account->uid;
+    user_login_submit(array(), $form_state);
+    drupal_set_message(t('Registration successful. You are now logged in.'));
+    $form_state['redirect'] = '';
+  }
+  // No administrator approval required.
+  elseif ($account->status || $notify) {
+    $op = $notify ? 'register_admin_created' : 'register_no_approval_required';
+    _user_mail_notify($op, $account);
+    if ($notify) {
+      drupal_set_message(t('A welcome message with further instructions has been e-mailed to the new user <a href="@url">%name</a>.', array('@url' => url($uri['path'], $uri['options']), '%name' => $account->name)));
+    }
+    else {
+      drupal_set_message(t('A welcome message with further instructions has been sent to your e-mail address.'));
+      $form_state['redirect'] = '';
+    }
+  }
+  // Administrator approval required.
+  else {
+    _user_mail_notify('register_pending_approval', $account);
+    drupal_set_message(t('Thank you for applying for an account. Your account is currently pending approval by the site administrator.<br />In the meantime, a welcome message with further instructions has been sent to your e-mail address.'));
+    $form_state['redirect'] = '';
+  }
+}
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////

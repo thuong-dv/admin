@@ -1,0 +1,29 @@
+<?php
+ 
+/**
+ * Implements hook_schema().
+ */
+function purchase_photo_schema() {
+   $schema['purchase_photo'] = array(
+    'fields' => array(
+      'uid' => array(
+        'description' => 'User UID logged',
+        'type' => 'int',
+        'unsigned' => FALSE,
+        'not null' => TRUE
+      ),
+      'fid' => array(
+        'description' => 'file FID',
+        'type' => 'int',
+        'unsigned' => FALSE,
+        'not null' => TRUE
+      )
+    ),
+    'indexs' => array(
+      array('uid' => 'uid')
+    ),
+  );  
+  
+  return $schema;
+ 
+}

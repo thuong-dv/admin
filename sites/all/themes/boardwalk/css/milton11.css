@@ -1,0 +1,566 @@
+/****  ****/
+
+.site-logo {
+    width: 75%;
+}
+.item-teaser .views-row{
+    float: left;
+    width: 49.9%;
+}
+.item-teaser .views-row .node-teaser {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.front .main-inner .region-content #block-system-main, 
+.front .main-inner .tabs.primary{
+    display: none!important;
+    opacity: 0!important;
+}
+#block-views-upcoming-events-block{
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+span.date-display-start{
+    margin-right: 7px;
+}
+span.date-display-end{
+    margin-left: 7px;
+}
+#block-views-upcoming-events-block .block-inner, #block-views-upcoming-events-block-1 .block-inner{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+}
+.view-id-upcoming_events.view-display-id-block .views-row, .upcoming-event-views .views-row{
+    float: left;
+    width: 33.33%;
+}
+.view-id-upcoming_events.view-display-id-block .views-row .node-teaser, .upcoming-event-views .inner-row{
+     background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 10px 20px;
+    padding: 10px;
+}
+.view-id-upcoming_events.view-display-id-block .views-row .node-teaser .node-content-wrapper{
+    border: medium none;
+    padding: 0 0 10px;
+}
+.inner-row{
+    height: 250px;
+}
+.node-type-event .field-name-field-dates .field-items{
+     color: #FF3000;
+    font-family: 'Oswald',sans-serif;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.node-type-event h1.title {
+    font-size: 24px;
+}
+.page-comment-reply .node-content-wrapper h2.title a{
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: normal;
+}
+/****  ****/
+.event-views-c .views-row{
+    border-bottom: 3px solid #DDDDDD;
+    clear: both;
+    display: block;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-bottom: 3px;
+}
+.event-views-c .views-row .rows-c{
+    border-bottom: 1px solid #DDDDDD;
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+.event-views-c .views-field-field-dates{
+    color: #FF3000;
+    font-family: 'Oswald',sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-bottom: 5px;
+}
+.event-views-c .views-field-field-image{
+    float: left;
+    margin-right: 20px;
+}
+.event-views-c .views-field-title{
+    font-family: 'Oswald',sans-serif;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.event-views-c .views-field-view-node {
+    float: right;
+}
+/****  ****/
+
+.user-top .user-login-form{
+    float: left;
+    width: 100%;
+     margin-left: 10%;
+}
+.user-top .user-regis-link{
+    float: right;
+    margin-top: -40px;
+}
+#block-block-2 .user-top .user-login-form label, #block-block-2 .user-top .user-login-form .description{
+    display: none!important;
+    opacity: 0!important;
+}
+#block-block-2 .user-top .user-login-form .form-item{
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/*#block-block-2 .user-top .user-login-form .form-actions{
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}*/
+#block-block-2 .user-top .user-login-form .form-actions input{
+    height: 30px;
+    font-size: 15px;
+    width: auto;
+    
+}
+#block-block-2 .user-top .user-login-form input{
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
+}
+.user-regis-link{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.user-regis-link a{
+    -webkit-appearance: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    -ms-background-clip: padding-box;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    background: #dddddd url('../images/button.png?1298351022') repeat-x;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+    background-image: -webkit-linear-gradient(#ffffff, #dddddd);
+    background-image: -moz-linear-gradient(#ffffff, #dddddd);
+    background-image: -o-linear-gradient(#ffffff, #dddddd);
+    background-image: -ms-linear-gradient(#ffffff, #dddddd);
+    background-image: linear-gradient(#ffffff, #dddddd);
+    border: 1px solid;
+    border-color: #dddddd #bbbbbb #999999;
+    cursor: pointer;
+    color: #333333;
+    outline: 0;
+    overflow: visible;
+    margin: 0 5px 0 0;
+    padding: 3px 10px;
+    text-shadow: white 0 1px 1px;
+    vertical-align: top;
+    width: auto;
+}
+.user-regis-link a:hover{
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(1px, #eeeeee), color-stop(100%, #cccccc));
+    background-image: -webkit-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+    background-image: -moz-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+    background-image: -o-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+    background-image: -ms-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+    background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+}
+.user-top .user-regis-link a{
+    font-size: 15px;
+    padding: 5px 10px;
+    height: 19PX;
+    display: block;
+}
+.block-simpleads img, .adslist a img{
+    width: 100%;
+    height: auto;
+}
+.block-ads-no-tit{
+     margin: 30px 0;
+}
+.block-ads-no-tit .block-title h3{
+    padding: 0;
+}
+.easy_social-widget.easy_social-widget-facebook iframe{
+    width: 50px!important;
+}
+.easy_social-widget.easy_social-widget-linkedin {
+    width: 62px!important;
+}
+.subscription .billing{
+    clear: both;
+    display: block;
+    float: left;
+    margin-right: 2%;
+    overflow: hidden;
+    width: 48%;
+}
+.subscription .info{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+.subscription .billing fieldset{
+    border: 1px solid #C0C0C0;
+    padding: 20px 20px 50px;
+    
+}
+.subscription .info fieldset{
+    background: url("../images/info.png") no-repeat scroll 15px 50% rgba(0, 0, 0, 0);
+    border: 1px solid #C0C0C0;
+    padding: 20px 20px 20px 80px;
+}
+.subscription .billing legend, .subscription .info legend{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.subscription .info legend{
+     margin-left: -55px;
+}
+/*#user-menu{
+    min-width: 360px;
+}*/
+.subscription {
+    clear: both;
+    display: block;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.grid-contain{
+    margin-left: -10px;
+    margin-right: -10px;
+    display: block;
+    overflow: hidden;
+}
+/****  ****/
+#block-views-views-weather-block h3.title{
+    padding-bottom: 0;
+}
+.view-views-weather .views-field-php{
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-left: 50px;
+    text-align: left;
+}
+.view-views-weather .views-field-symbol{
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+.view-views-weather .views-field-condition, .view-views-weather .views-field-temperature{
+    float: left;
+    padding-left:10px;
+}
+.view-views-weather .views-field-wind {
+    float: left;
+    padding-left: 10px;
+}
+
+.view-views-weather .views-field-symbol img{
+    height: auto;
+    width: 100%;
+}
+.views-field-php,.views-field-condition,.views-field-temperature,.views-field-wind {
+        font-size: 11px;
+    }
+/****  ****/
+.upcoming-event-views .block-views-event-more .views-row{
+    margin: 3px 0;
+    width: 100%;
+}
+.upcoming-event-views .block-views-event-more .views-row.views-row-last{
+    margin-bottom: 20px;
+}
+.upcoming-event-views .block-views-event-more .views-row .views-field-title{   
+    float: left;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 0 10px;
+}
+.upcoming-event-views .block-views-event-more .views-row .views-field-title a{   
+    font-weight: normal;
+}
+.upcoming-event-views .block-views-event-more .views-row .views-field-field-dates{
+    color: #FF3000;
+    font-size: 15px;
+    padding: 0 10px;
+}
+.view-footer .titlec{
+     background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 10px;
+    padding: 5px 10px;
+}
+.upcoming-event-views .event-next, .upcoming-event-views .event-past{
+    float: left;
+    min-height: 200px;
+    width: 47%;
+    padding: 1%;
+    background: none repeat scroll 0 0 #FFFFFF;
+    
+}
+.upcoming-event-views .event-next{
+    margin-right: 2%;
+}
+/****  ****/
+.main-content-wrapper{
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+/****  ****/
+body.calendar {
+    width: auto;
+}
+.view-id-calendar.view-display-id-block_1 h3{
+    background: none repeat scroll 0 0 #FF0000;
+}
+.view-id-calendar.view-display-id-block_1 h3 a{
+     background: none repeat scroll 0 0 #FF0000;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0 10px;
+}
+.calendar-calendar .mini-day-on {
+    background: none repeat scroll 0 0 #FF0000;
+    margin: 0 0 0 5px;
+}
+table .mini-day-on a{
+    color: #FFFFFF;
+}
+/**** ser-menu ****/
+header section.social{
+     margin-left: -10%;
+    width: 45%;
+}
+ #local-weather{
+    margin-left: -70px;
+    margin-top: 10px;
+    width: 50%;
+}
+header nav#user-menu{
+     margin-right: -20px;
+    width: 67%;
+}
+header .search-box{
+    display: block;
+    margin-right: -20px;
+    position: relative;
+    width: 60%;
+}
+#block-search-form .form-item-custom-search-vocabulary-3{
+    left: -162px;
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#block-search-form .form-item-custom-search-vocabulary-3 select{
+    font-size: 13px;
+    height: 30px;
+    padding: 4px;
+}
+/* logged user-menu*/
+
+.logged-in .user-title  span.picture {
+    float: left;
+    width: 40px;
+    padding-right: 10px;
+}
+.logged-in .user-title  span.picture img {
+     border: 1px solid #CCCCCC;
+    height: auto;
+    width: 100%;
+}
+.logged-in .user-block{
+    background: none repeat scroll 0 0 #DFDFDF;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-right: -10px;
+    min-height: 80px;
+    position: absolute;
+    text-align: left;
+    width: 150px;
+    z-index: 2000;
+}
+.logged-in #block-block-2 {
+    float: right;
+    width: 100%;
+}
+.logged-in .user-top {
+    float: right;
+    width: 33%;
+}
+.logged-in .user-title{
+    display: block;
+    font-size: 15px;
+    height: 45px;
+}
+.logged-in .user-title a.name {
+    float: left;
+    margin-top: 10px;
+    
+}
+.logged-in .user-block li{
+    list-style: none outside none;
+}
+.logged-in .user-block li a:hover{
+    color: #ff0000;
+}
+.logged-in .user-block{
+    display: none;
+}
+.logged-in .user-title .name span {
+    background: url("../images/arrow.png") no-repeat scroll 5px 3px / 17px auto rgba(0, 0, 0, 0);
+    height: 20px;
+    position: absolute;
+    text-indent: 99999px;
+    width: 20px;
+}
+/*arrow user menu*/
+.logged-in .user-block:after, 
+.logged-in .user-block:before {
+    bottom:100%;left:50%;
+    border:solid transparent;
+    content:" ";
+    height:0;width:0;
+    position:absolute;
+    pointer-events:none;
+} 
+.logged-in .user-block:after {
+    border-bottom-color: #DFDFDF;
+    border-width: 10px;
+    margin-left: -7%;
+} 
+.logged-in .user-block:before {
+   border-bottom-color: #CCCCCC;
+    border-width: 13px;
+    margin-left: -9%;
+} 
+    /*end*/
+#block-search-form{
+    position: relative;
+}
+.user-welcome a:hover{
+    color: red;
+}
+#block-views-slideshow-block .view-slideshow .views-field-title a{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.upcoming-event-views .view-footer{
+    clear: both;
+    display: block;
+    margin: 0 10px;
+    overflow: hidden;
+}
+/*Register*/
+.page-user .region-content .form-item label {
+    float: left;
+    width: 120px;
+}
+.page-user-register .user-info-from-cookie .form-type-password {
+    width: 100%;
+    margin: 10px 0;
+}
+.page-user-register .password-strength {
+    margin-top: 0;
+    padding-right: 20%;
+}
+.page-user-register div.password-confirm {
+    margin-top: 10px;
+    padding-right: 20%;
+    
+}
+.page-user-register .password-suggestions  {
+    display: none!important;
+}
+.page-user .region-content .form-item input.form-text {
+     border-radius: 4px;
+    height: 30px;
+    width: 30%;
+    border: 1px solid #ccc;
+}
+
+.page-user-password .region-content .form-item-name label{
+    width: 100%;
+}
+.page-user .region-content .form-actions input.form-submit {
+    padding: 10px 15px;
+}
+.page-user-register .fieldset-wrapper .form-item-notify-decision input.form-checkbox {
+    float: left;
+    margin-right: 10px;
+}
+.page-user-register .fieldset-wrapper .form-item-notify-decision label {
+    float: right;
+    width: 95%;
+}
+.page-user-register .user-info-from-cookie .form-actions input.form-submit {
+    margin-left: 15%;
+}
+.page-user-register .user-info-from-cookie .form-select {
+    height: 30px;
+    border-radius: 4px;
+}
+/*story*/
+.page-node-edit.node-type-story .image-widget-data img.file-icon{
+    width: auto;
+}
+.node-type-story .link-purchase a:hover{
+    color: #ff0000;
+}
+/* subscription */
+fieldset legend span.fieldset-legend{
+    font-size: 15px;
+}
+
+.info fieldset h3 {
+    font-size: 14px;
+
+}
+.node-type-subscription .subscription .billing label {
+    float: left;
+    width: 100px;
+}
+.node-type-subscription .subscription .billing .form-select,
+.node-type-subscription .subscription .billing input {
+    border: 1px solid #CCCCCC;
+    height: 30px;
+    width: 50%;
+    border-radius: 4px;
+}
+
+.node-type-subscription .subscription .billing input.form-submit {
+    background: url("../images/subscribe.jpg") no-repeat scroll 0 0 / 50% auto rgba(0, 0, 0, 0);
+    border: medium none;
+    height: 50px;
+    margin-left: 8%;
+    position: absolute;
+    text-indent: 999px;
+    width: 30%;
+}
+
+.node-type-subscription .subscription .info table{
+    background: none repeat scroll 0 0 #CCCCCC;
+}

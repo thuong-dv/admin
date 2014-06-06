@@ -1,0 +1,211 @@
+<?php
+
+function purchase_photo_clear_cache() {
+  drupal_static_reset('purchase_photo_set_style');
+}
+function purchase_photo_init(){
+ 
+}
+
+/**
+ * Implement hook_menu()
+ */
+function purchase_photo_menu()
+{
+  
+  $items['user/%user/photos'] = array(
+    'title' => 'Photos',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('purchase_photo_download', 1),
+    'access callback' => 'user_edit_access',
+    'access arguments' => array(1),
+    'type' => MENU_LOCAL_TASK,
+  );
+      
+    
+  return $items;
+}
+
+ function purchase_photo_download($form, &$form_state, $account){
+   $header = array(
+    'id' => array('data' => t('#')),
+    'uri' => array('data' => t('Name'), 'field' => 'fm.uri'),
+    'size' => array('data' => t('Size'), 'field' => 'fm.filesize'),
+    'path' => array('data' => t('URL')),
+  );
+  
+    
+ $query = db_select('purchase_photo', 'pp')
+        ->extend('PagerDefault')->extend('TableSort'); 
+  $query->join('file_managed', 'fm', 'fm.fid = pp.fid');
+  $query->condition('pp.uid', $account->uid);
+  $query->fields('pp'); 
+  $query->fields('fm');
+  
+  $nodes = $query
+    ->limit(20)
+    ->orderByHeader($header)                           
+    ->execute();
+  
+  
+  $options = array(); 
+  $i = 1;
+  foreach($nodes as $node){
+    $path = file_uri_target($node->uri); 
+    $args = explode('/', $path);
+    $path = l(t('Download'), file_create_url($node->uri));
+    $options[$i] = array(
+      'id' => $i,
+      'uri' => isset($args[1]) ? $args[1] : "",      
+      'filesize' => isset($node->filesize) ? format_size($node->filesize) : "",
+      'path' => isset($path) ? $path : "",
+      );
+    $i++;
+  
+  }
+ 
+    $form['nodes'] = array(
+      '#theme' => 'table',
+      '#header' => $header,
+      '#rows' => $options,
+      '#empty' => t('No content available.'),
+    );
+  
+    $form['pager'] = array('#markup' => theme('pager'));
+    
+    $form['#attributes'] = array ('enctype' => "multipart/form-data" );
+   
+    return $form;
+  
+ }
+   
+/**
+ * Implements hook_file_download().
+ */
+function purchase_photo_file_download($uri){
+ // $image_style = array('original_image', 'img_purchase');
+  $path = file_uri_target($uri); 
+
+  if ($info = image_get_info($uri)) {
+     
+    // Discard image style  
+    $style = purchase_photo_get_style();
+    if(is_string($style)) {
+      return NULL;
+    }
+   /** 
+    * if(in_array($style, $image_style)){ 
+        return NULL;
+     }
+    **/    
+   
+   $args = explode('/', $path);
+   if (strpos($path, 'purchase') === 0) { //photo path
+ 
+   $is_purchased = purchase_photo_check_uri_purchased($uri); //from filename
+   // Check image URI.
+  
+     if($is_purchased > 0){
+     // Return file headers to allow access.
+      return array(
+        'Content-Type' => $info['mime_type'],
+        'Content-Length' => $info['file_size'],
+      );
+     } else{
+      return -1;
+     }
+  }
+  }
+  // Ignore this module by default.
+  return NULL;
+  
+   
+}
+
+function purchase_photo_list_accessible_sources() {
+  return file_get_stream_wrappers(STREAM_WRAPPERS_LOCAL | STREAM_WRAPPERS_READ | STREAM_WRAPPERS_VISIBLE);
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function purchase_photo_menu_alter(&$items) {
+  // Get stream wrappers to override image style access callbacks for.
+  $wrappers = purchase_photo_list_accessible_sources();
+
+  // Override private style access callbacks.
+  $style_path = 'system/files/styles/%image_style';
+  $access_arguments = array(3, 4, '5');
+  if (isset($items[$style_path])) {
+    $items[$style_path]['access callback'] = 'purchase_photo_check_style';
+    $items[$style_path]['access arguments'] = $access_arguments;
+  }
+  foreach (array_keys($wrappers) as $scheme) {
+    $scheme_style_path = "$style_path/$scheme";
+    if (isset($items[$scheme_style_path])) {
+     
+      $items[$scheme_style_path]['access callback'] = 'purchase_photo_check_style';
+      $items[$scheme_style_path]['access arguments'] = $access_arguments;
+    }
+  }
+}
+
+/**
+ * Basic access callback to track requested style name.
+ */
+function purchase_photo_check_style($style, $scheme, $target_start = '0') {
+  // Track style name.  
+  $style = is_array($style) ? $style['name'] : $style; 
+  purchase_photo_set_style($style);
+
+  // Emulate default core access behavior by default.
+  return TRUE;
+}
+
+function purchase_photo_set_style($style_name) {
+  $style = &drupal_static(__FUNCTION__);
+  $style = $style_name;
+ 
+}
+
+/**
+ * Gets the image style to check access to.
+ *
+ * @return
+ *   Image style name, or NULL for original image.
+ */
+function purchase_photo_get_style() {
+  // Explicit check as original image by default.
+  return drupal_static('purchase_photo_set_style', NULL);
+}
+
+
+function purchase_photo_check_uri_purchased($uri){
+    global $user;
+   
+    $query = db_select('purchase_photo', 'pp');
+    $query->leftJoin('file_managed', 'fm', 'fm.fid = pp.fid');
+    $query->condition('pp.uid', $user->uid)
+        ->condition('fm.uri', $uri)
+        ->fields('pp', array('fid'));
+    $fid = $query->execute()->fetchField();
+        
+    if(!empty($fid)){
+            return 1;
+    } 
+   return FALSE;
+    
+}
+
+function purchase_photo_enable()
+{  
+  if(db_table_exists('purchase_photo') == FALSE) {
+    // Create tables. 
+      drupal_install_schema('purchase_photo');    
+  }
+ 
+}
+//{
+//   db_delete('purchase_photo')->condition('fid', 3)->condition('uid', 1)->execute();
+//   db_insert('purchase_photo')->fields(array('fid' => 3, 'uid' => 1))->execute();
+//}

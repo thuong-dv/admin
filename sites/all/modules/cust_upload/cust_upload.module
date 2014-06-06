@@ -1,0 +1,25 @@
+<?php
+
+function cust_upload_form_alter(&$form, &$form_state, $form_id) {
+//hook login_submit  
+//print $form_id;
+    if($form_id=="images_upload_node_form"){
+        //print_r($form);die();
+        $form['title']['#required'] = 0;
+        $form['title']['#access'] = 0;
+        //$form['comment_settings']['#access'] = 0;
+        //$form['options']['#access'] = 0;
+        //$form['author']['#access'] = 0;
+        //$form['revision_information']['#access'] = 0;
+        $form['additional_settings']['#access'] = 0;
+        $form['actions']['preview']['#access'] = 0;
+        $form['actions']['delete']['#access'] = 0;
+        $form['#action'] = '/node/add/images-upload?destination=node/add/story';
+
+        
+        
+        
+    }
+}
+
+

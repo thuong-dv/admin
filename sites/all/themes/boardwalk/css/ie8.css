@@ -1,0 +1,16 @@
+ 
+html[data-useragent*='MSIE 8.0'] .view-latest-stories .node-teaser .node-content-wrapper {
+    min-height: 135px;
+}
+html[data-useragent*='MSIE 8.0'].view-taxonomy-term .node-teaser .node-content-wrapper{
+    min-height: 135px;
+}
+
+html[data-useragent*='MSIE 8.0'] .view-photos-album.view-display-id-block_3 .imagebox1 .views-row{
+    background: url("../images/bg_bot.png") repeat-x scroll 0 bottom rgba(0, 0, 0, 0);
+
+}
+html[data-useragent*='MSIE 8.0'] .logged-in .user-title .name span.full-name {
+    background: url("../images/arrow.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    padding-right: 20px;
+}

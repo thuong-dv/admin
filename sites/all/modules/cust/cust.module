@@ -1,0 +1,67 @@
+<?php
+/**
+ * Implements hook_menu().
+ */
+function cust_menu() {
+    //TAO TRANG pagetest TRONG ADMIN CONFIG
+    $items['admin/config/services/update_article'] = array(
+        'title' => t('Update Images Article'),
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('cust_update_article_form'),
+        'access arguments' => array('administer users'),
+        'file' => 'cust_update.article.inc'
+      );
+      
+      //TAO TRANG MOI CUSTOM CO URL LA urltest
+      $items['urltest'] = array(//TAO DUONG DAN, HOAC GHI DE DUONG DAN DA CO TREN URL
+        'title' => t('Page test'),//TIEU DE TRANG
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('cust_form'),
+        'access callback' => 'user_access',//la ham mac dinh cua drupal de xac dinh permission, gia tri tra ve la true(tat ca deu co the truy cap) or false, neu khong co thi hieu ngam la nhu tren.
+        'access arguments' => array('administer users'),//la cac doi so truyen vao cho ham user_access,  cac doi so nay lay gia tri permission tu bang user permission (vd: access content, delete own page content, administer users, .....)
+        'file' => 'cust_test_ajax.inc'
+      );
+      
+    return $items;
+}
+
+
+function myaccount_perm() {
+  return array('myaccount reports(admin)', 'access myaccount');//tao permission vao bang permission cho user chon
+}
+
+function cust_social(){
+    
+}
+function cust_form_alter(&$form, &$form_state, $form_id) {
+//hook login_submit  
+print $form_id;
+ switch ($form_id) {
+    case 'user_login_block':
+    case 'user_login' :
+      array_unshift($form['#submit'], 'custom_login_submit');
+      break;
+    case 'images_private_node_form':
+        //print_r($form);die();
+        $form['title']['#required'] = 0;//khong bat buoc nhap
+        //$form['title']['#access'] = 0;//khong hien thi
+        $form['title']['#disabled'] = TRUE;//khong cho nhap
+        break;
+    case 'article_node_form':
+        //print_r($form);die();
+        $form['title']['#required'] = 0;//khong bat buoc nhap
+        //$form['title']['#access'] = 0;//khong hien thi
+        $form['title']['#disabled'] = TRUE;//khong cho nhap
+        break;
+      
+  }
+}
+/**
+ * Implements hook node presave.
+ */
+/*
+function cust_node_presave($node){
+    print_r($node);die();
+}
+*/
+

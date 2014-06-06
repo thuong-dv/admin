@@ -1,0 +1,4 @@
+.node-story .field-image img, .node-story .images-gallery img, .node-photo-album .field-image img, .node-photo-album .images-gallery img{
+    width: 100%;
+    height: auto;
+}

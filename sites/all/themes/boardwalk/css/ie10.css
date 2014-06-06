@@ -1,0 +1,7 @@
+ /*Fix IE*/
+
+html[data-useragent*='MSIE 10.0'].node-teaser .node-content-wrapper {
+    min-height: 170px;
+}
+
+/*end fix IE*/

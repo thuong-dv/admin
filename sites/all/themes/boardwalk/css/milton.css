@@ -1,0 +1,1119 @@
+#block-views-magazine-block{
+    z-index: 0;
+}
+/****  ****/
+.field-name-field-social{ float: left;}
+.view-taxonomy-term .submitted, .view-featured-view .submitted{
+  display: none;
+}
+.site-logo {
+    width: 75%;
+}
+.header-wrapper .site-logo img {
+    width: 75%;
+}
+.item-teaser .views-row{
+    float: left;
+    width: 49.9%;
+}
+.view-taxonomy-term  .node-teaser .node-content-wrapper,
+.view-latest-stories .node-teaser .node-content-wrapper{
+    min-height: 135px;
+}
+
+.item-teaser .views-row .node-content-wrapper {
+    min-height: 50px;
+}
+.view-latest-stories .node-content-wrapper .field-type-text-with-summary{
+    display: none;
+}
+.front .main-inner .region-content #block-system-main, 
+.front .main-inner .tabs.primary{
+    display: none!important;
+    opacity: 0!important;
+}
+#block-views-upcoming-events-block{
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+span.date-display-start{
+    margin-right: 7px;
+}
+span.date-display-end{
+    margin-left: 7px;
+}
+#block-views-upcoming-events-block .block-inner, #block-views-upcoming-events-block-1 .block-inner{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+}
+.view-id-upcoming_events.view-display-id-block .views-row, .upcoming-event-views .views-row{
+    float: left;
+    width: 33.33%;
+    margin-bottom: 10px;
+    height: auto!important;
+}
+.view-id-upcoming_events.view-display-id-block .views-row .node-teaser, .upcoming-event-views .inner-row{
+     background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 10px 20px;
+    padding: 10px;
+}
+.view-id-upcoming_events.view-display-id-block .views-row .node-teaser .node-content-wrapper{
+    border: medium none;
+    padding: 0 0 10px;
+}
+.node-type-event .field-name-field-dates .field-items, 
+.node-type-event .field-name-field-start-date .field-items, 
+.node-type-event .field-name-field-end-date .field-items{
+    color: #FF3000;
+    font-family: 'Oswald',sans-serif;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.node-type-event .field-name-field-start-date{
+    float: left;
+    margin-right: 10px;
+}
+.node-type-event h1.title {
+    font-size: 24px;
+}
+.page-comment-reply .node-content-wrapper h2.title a{
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: normal;
+}
+/****  ****/
+.event-views-c .views-row{
+    border-bottom: 3px solid #DDDDDD;
+    clear: both;
+    display: block;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-bottom: 3px;
+}
+.event-views-c .views-row .rows-c{
+    border-bottom: 1px solid #DDDDDD;
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+.event-views-c .views-field-field-dates{
+    color: #FF3000;
+    font-family: 'Oswald',sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-bottom: 5px;
+}
+.event-views-c .views-field-field-image{
+    float: left;
+    margin-right: 20px;
+}
+.event-views-c .views-field-title{
+    font-family: 'Oswald',sans-serif;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.event-views-c .views-field-view-node {
+    float: right;
+}
+/****  ****/
+.user-top .user-login-form{
+    display: block;
+    float: right;
+    margin-right: -5px;
+    width: 300px;
+}
+.user-top .user-regis-link{
+    float: right;
+     margin-right: -300px;
+    margin-top: 32px;
+}
+#block-block-2 .user-top .user-login-form label, #block-block-2 .user-top .user-login-form .description{
+    display: none;
+    opacity: 0;
+}
+#block-block-2 .user-top .user-login-form .form-item-remember-me label{
+    display: block;
+    opacity: 1;
+    width: 110px;
+}
+#block-block-2 .user-top .user-login-form .form-item{
+    float: left;
+    margin: 5px 0 0;
+    width: 50%;
+}
+#block-block-2 .user-top .user-login-form .form-item.form-item-remember-me{
+    margin-left: 5%;
+    width: 45%;
+}
+#block-block-2 .user-top .user-login-form .form-actions{
+    width: 22%;
+    float: left;
+    margin-top: 6px;
+}
+
+#block-block-2 .user-top .user-login-form .form-item.form-item-remember-me .form-checkbox{
+    float: left;
+    width: 10px;
+}
+#block-block-2 .user-top .user-login-form .form-actions input{
+    float: left;
+    width: auto;
+}
+#block-block-12 {
+    display: none;
+}
+#block-block-2 .user-top .user-login-form input{
+    width: 140px;
+    font-size: 13px;
+}
+.user-top .user-login-link {
+    display: none;
+}
+ .user-top .user-login-link {
+        
+        font-size: 15px;
+        position: absolute;
+        right: 0;
+        top: -40px;
+    }
+.user-top .user-login-link a{
+    padding: 5px 10px;
+}
+#block-views-photos-album-block-3 .views-field-title {
+    display: none;
+}
+.login-comment-text,
+.login-comment-signup,
+.login-comment-login{
+    float: left;
+}
+.login-comment-signup,
+.login-comment-login,
+.user-regis-link a{
+    -webkit-appearance: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    -ms-background-clip: padding-box;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    background: #dddddd url('../images/button.png?1298351022') repeat-x;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+    background-image: -webkit-linear-gradient(#ffffff, #dddddd);
+    background-image: -moz-linear-gradient(#ffffff, #dddddd);
+    background-image: -o-linear-gradient(#ffffff, #dddddd);
+    background-image: -ms-linear-gradient(#ffffff, #dddddd);
+    background-image: linear-gradient(#ffffff, #dddddd);
+    border: 1px solid;
+    border-color: #dddddd #bbbbbb #999999;
+    cursor: pointer;
+    color: #333333;
+    outline: 0;
+    overflow: visible;
+    margin: 0 5px 0 5px;
+    padding: 3px 10px;
+    text-shadow: white 0 1px 1px;
+    vertical-align: top;
+    width: auto;
+}
+.user-regis-link a:hover{
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(1px, #eeeeee), color-stop(100%, #cccccc));
+    background-image: -webkit-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+    background-image: -moz-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+    background-image: -o-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+    background-image: -ms-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+    background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+}
+.user-top .user-regis-link a{
+    display: block;
+    font-size: 13px;
+    padding: 2px 7px;
+}
+.block-simpleads img, .adslist a img{
+    width: 100%;
+    height: auto;
+}
+.block-ads-no-tit{
+     margin: 30px 0;
+}
+.block-ads-no-tit .block-title h3{
+    padding: 0;
+}
+.easy_social-widget.easy_social-widget-facebook iframe{
+    width: 50px!important;
+}
+/*.easy_social-widget-googleplus {
+    width: 60px;
+}
+.easy_social-widget.easy_social-widget-linkedin {
+    width: 95px;
+}*/
+.easy_social_box {
+    float: left;
+    margin-right: 20px;
+}
+.social-addtoany.social-addtoany-top {
+    float: left;
+    height: 30px;
+}
+.social-addtoany-bot ul.links.inline{
+    padding: 0;
+}
+
+.easy_social-widget-twitter a.twitter-share-button {
+    background: url("../images/Twitter-32.png") no-repeat scroll 0 0 / 17px auto #ECECEC;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #333333;
+    height: 17px;
+    line-height: 21px;
+    padding: 2px 5px 2px 20px;
+    
+}
+.subscription .billing{
+    clear: both;
+    display: block;
+    float: left;
+    margin-right: 2%;
+    overflow: hidden;
+    width: 48%;
+}
+.subscription .info{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+.subscription .billing fieldset{
+    border: 1px solid #C0C0C0;
+    padding: 20px 20px 50px;
+    
+}
+.subscription .info fieldset{
+    background: url("../images/info.png") no-repeat scroll 15px 50% rgba(0, 0, 0, 0);
+    border: 1px solid #C0C0C0;
+    padding: 20px 20px 20px 80px;
+}
+.subscription .billing legend, .subscription .info legend{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.subscription .info legend{
+     margin-left: -55px;
+}
+.subscription {
+    clear: both;
+    display: block;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.grid-contain{
+    margin-left: -10px;
+    margin-right: -10px;
+    display: block;
+    overflow: hidden;
+}
+/**** weather ****/
+#block-views-views-weather-block h3.title{
+    padding-bottom: 0;
+}
+.view-views-weather .views-field-php{
+    font-weight: bold;
+    margin-bottom: 0;
+    text-align: left;
+}
+.view-views-weather .views-field-symbol{
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+.view-views-weather .views-field-php span {
+    padding-left: 10px;
+}
+.view-views-weather .views-field-condition, .view-views-weather .views-field-temperature{
+    float: left;
+    padding-left:10px;
+}
+.view-views-weather .views-field-wind {
+    float: left;
+    padding-left: 10px;
+}
+.view-views-weather .views-field-symbol img{
+    height: auto;
+    width: 100%;
+}
+.views-field-php,.views-field-condition,.views-field-temperature,.views-field-wind {
+        font-size: 11px;
+    }
+/****  ****/
+.upcoming-event-views .block-views-event-more .views-row{
+    margin: 3px 0;
+    width: 100%;
+}
+.upcoming-event-views .block-views-event-more .views-row.views-row-last{
+    margin-bottom: 20px;
+}
+.upcoming-event-views .block-views-event-more .views-row .views-field-title{   
+    float: left;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 0 10px;
+}
+.upcoming-event-views .block-views-event-more .views-row .views-field-title a{   
+    font-weight: normal;
+}
+.upcoming-event-views .block-views-event-more .views-row .views-field-field-dates{
+    color: #FF3000;
+    font-size: 15px;
+    padding: 0 10px;
+}
+.view-footer .titlec{
+     background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 10px;
+    padding: 5px 10px;
+}
+.field-photo-album h2.title{
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 5px 10px;
+}
+.view-photos-album.view-display-id-block_3 {
+    display:  block;
+    overflow: hidden;
+}
+.upcoming-event-views .event-next, .upcoming-event-views .event-past{
+    float: left;
+    min-height: 200px;
+    width: 47%;
+    padding: 1%;
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.upcoming-event-views .event-next{
+    margin-right: 2%;
+}
+/****  ****/
+.main-content-wrapper{
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+/****  ****/
+body.calendar {
+    width: auto;
+}
+.view-id-calendar.view-display-id-block_1 h3{
+    background: none repeat scroll 0 0 #FF0000;
+}
+.view-id-calendar.view-display-id-block_1 h3 a{
+     background: none repeat scroll 0 0 #FF0000;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0 10px;
+}
+.calendar-calendar .mini-day-on {
+    background: none repeat scroll 0 0 #FF0000;
+    margin: 0 0 0 5px;
+}
+table .mini-day-on a{
+    color: #FFFFFF;
+}
+/**** ser-menu ****/
+header section.social{
+    width: 40%;
+}
+ #local-weather{
+    width: 35%;
+     margin-left: 10%;
+}
+header nav#user-menu{
+    float: right;
+    margin-right: -10px;
+    width: 50%;
+}
+header .search-box{
+    display: block;
+    float: right;
+    margin-right: -10px;
+    margin-top: 2px;
+    width: 50%;
+}
+header .search-form {
+    margin-bottom: 5px;
+}
+#search-block-form .form-item.form-item-search-block-form{
+    margin-left: 0;
+}
+
+#block-search-form .form-item-custom-search-vocabulary-3{
+    left: 5px;
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#block-search-form .form-item-custom-search-vocabulary-3 select{
+    font-size: 13px;
+    height: 30px;
+    padding: 4px;
+    width: 130px;
+}
+/* logged user-menu*/
+.logged-in .user-block{
+     background: none repeat scroll 0 0 #DFDFDF;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-top: 10px;
+    min-height: 80px;
+    position: absolute;
+    right: -7px;
+    text-align: left;
+    top: 40px;
+    width: 140px;
+    z-index: 2000;
+}
+.logged-in #block-block-2 {
+    float: right;
+    width: 100%;
+}
+.logged-in .user-top {
+    float: right;
+    min-width: 150px;
+    width: 75%;
+}
+.logged-in .user-title{
+    display: block;
+    font-size: 15px;
+    height: 45px;
+}
+.logged-in .user-title a.name {
+    float: right;
+    margin-top: 10px;
+    
+}
+.logged-in .user-block li{
+    list-style: none outside none;
+}
+.logged-in .user-block li a:hover{
+    color: #ff0000;
+}
+.logged-in .user-block{
+    display: none;
+}
+
+.logged-in .user-title .name span.picture {
+    background: none;
+    float: left;
+    width: 30px;
+    height: auto;
+    margin-top: -5px;
+    padding-right: 10px;
+}
+.logged-in .user-title .name span.full-name{
+    padding-right: 20px;
+    background:url("../images/arrow.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+}
+.logged-in .user-title  span.picture img {
+    border: 1px solid #CCCCCC;
+    height: auto;
+    width: 100%;
+    display: block;
+}
+    /*arrow user menu*/
+.logged-in .user-block:after, 
+.logged-in .user-block:before {
+    bottom:100%;left:50%;
+    border:solid transparent;
+    content:" ";
+    height:0;width:0;
+    position:absolute;
+    pointer-events:none;
+} 
+.logged-in .user-block:after {
+    border-bottom-color: #DFDFDF;
+    border-width: 11px;
+    margin-left: -7%;
+} 
+.logged-in .user-block:before {
+   border-bottom-color: #CCCCCC;
+    border-width: 14px;
+    margin-left: -9%;
+} 
+    /*user-profile-form*/
+input.form-autocomplete, input.form-text, input.form-file, select.form-select{
+    width: 200px;
+}
+
+#user-profile-form #edit-account .form-type-radios label {
+    margin-bottom: 20px;
+}
+#user-profile-form #edit-account .form-type-checkboxes label {
+    float: none;
+}
+.page-user-register .form-type-password .password-strength,
+.page-user-register .form-type-password div.password-confirm{
+        display: none;
+}
+/*profile*/
+.profile .field-label {
+    float: left;
+}
+    /*block-search-form*/
+#block-search-form{
+    position: relative;
+}
+.user-welcome a:hover{
+    color: red;
+}
+#block-views-slideshow-block .view-slideshow .views-field-title a{
+    font-size: 20px;
+    line-height: 1.5;
+}
+.upcoming-event-views .view-footer{
+    clear: both;
+    display: block;
+    margin: 0 10px;
+    overflow: hidden;
+}
+/*Register*/
+.page-user-edit #user-profile-form,
+.page-user .region-content #user-login,
+.page-user-password #user-pass,
+.page-user-register .region-content .user-info-from-cookie {
+    margin: 0 auto;
+    width: 60%;
+}
+.page-user .region-content .form-type-checkbox.form-item-remember-me {
+    float: left;
+    margin-left: 13%;
+}
+
+.page-user .region-content .form-item .form-checkbox {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+.page-user .form-type-checkbox .description {
+    display: block;
+    font-size: 12px;
+}
+.page-user .description {
+    display: none;
+}
+.page-user .region-content .form-item label.option {
+    float: none;
+    margin-right: 15px;
+}
+.page-user .region-content .form-item label {
+    float: left;
+    padding-right: 0;
+    width: 110px;
+}
+.page-user-register .user-info-from-cookie .form-type-password {
+    width: 100%;
+    margin: 10px 0;
+}
+.page-user-register .password-strength {
+    margin-top: 0;
+    padding-right: 20%;
+}
+.page-user-register div.password-confirm {
+    margin-top: 10px;
+    padding-right: 20%;
+    
+}
+.page-user-register .password-suggestions  {
+    display: none!important;
+}
+.page-user-register .user-info-from-cookie .form-select{ 
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    height: 30px;
+    margin-bottom: 0;
+    width: 50%;
+}
+.page-user-register .user-info-from-cookie .group-optional-e-a .form-type-checkbox{
+    margin: 0;
+}
+#user-profile-form .field-name-field-postal-code .form-item-field-postal-code-und-0-value,
+#user-profile-form .form-type-select {
+    margin: 0 auto;
+}
+#user-profile-form .field-name-field-age-range,
+#user-profile-form .field-type-location,
+#user-profile-form .field-name-field-postal-code,
+#user-profile-form .field-name-field-age-range, {
+    margin-top: -10px;
+}
+#user-profile-form .form-type-select select,
+.page-user .region-content .form-item input.form-text {
+     border-radius: 4px;
+    height: 30px;
+    width: 50%;
+    border: 1px solid #ccc;
+}
+#user-profile-form .password-field,
+#user-profile-form .password-confirm {
+    width: 35%;
+    margin-top: 0;
+}
+#user-profile-form .confirm-parent, #user-profile-form .password-parent {
+     margin: 10px 0;
+}
+#user-profile-form .password-strength {
+    margin-top: 0;
+    width: 33%;
+}
+.page-user .region-content .form-item input.form-text.error{
+    border: 2px solid #FF0000;
+}
+.page-user-password .region-content .form-item-name label{
+    width: 100%;
+}
+.page-user .region-content .form-actions input.form-submit {
+    padding: 8px 15px;
+}
+.page-user-register .fieldset-wrapper .form-item-notify-decision input.form-checkbox {
+    float: left;
+    margin-right: 10px;
+}
+.page-user-register .fieldset-wrapper .form-item-notify-decision label {
+    float: right;
+    width: 95%;
+}
+.page-user-register .user-info-from-cookie .form-actions input.form-submit {
+    margin-left: 15%;
+}
+/*story*/
+.page-node-edit.node-type-story .image-widget-data img.file-icon, 
+.page-node-edit .image-widget-data img.file-icon, 
+.page-node-add .image-widget-data img.file-icon{
+    width: auto!important;
+}
+.node-type-story .link-purchase a:hover{
+    color: #ff0000;
+}
+/* subscription */
+fieldset legend span.fieldset-legend{
+    font-size: 15px;
+}
+
+.info fieldset h3 {
+    font-size: 14px;
+
+}
+.node-type-subscription .subscription .billing label {
+    float: left;
+    width: 100px;
+}
+.node-type-subscription .subscription .billing .form-select,
+.node-type-subscription .subscription .billing input {
+    border: 1px solid #CCCCCC;
+    height: 30px;
+    width: 50%;
+    border-radius: 4px;
+}
+.node-type-subscription .subscription .billing input.form-submit {
+    background: url("../images/subscribe.jpg") no-repeat scroll 0 0 / 50% auto rgba(0, 0, 0, 0);
+    border: medium none;
+    height: 50px;
+    margin-left: 8%;
+    position: absolute;
+    text-indent: 999px;
+    width: 30%;
+}
+.node-type-subscription .subscription .info table{
+    background: none repeat scroll 0 0 #CCCCCC;
+}
+.date-to{
+    color: #FF3000;
+    float: left;
+    font-family: 'Oswald',sans-serif;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+.node-type-story #comments .item-list, 
+.node-type-story #comments .item-list ul.pager{
+    display: none!important;
+    opacity: 0!important;
+}
+li.addtoany {
+    clear: both;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+}
+li.addtoany a{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    padding: 0;
+}
+/****************************************************************/
+.view-photos.view-display-id-page_2 .views-field-nothing{
+    border-bottom: 3px solid #ddd;
+    padding-bottom:3px;
+}
+.view-photos.view-display-id-page_2 .views-row .node-content-wrapper{
+    min-height: 50px;
+    border-bottom: 1px solid #ddd;
+} 
+.album-photos-purchase .views-row {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 4%;
+    width: 48%;
+}
+.view-issues .views-row img {
+    height: auto;
+    width: 100%;
+}
+.album-photos-purchase .views-row.views-row-even{
+    margin-right: 0;
+}
+.album-photos-purchase .views-field-field-image img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.album-photos-purchase.view-display-id-block_3 .imagebox1 .views-field-field-image img {
+    margin-bottom: 0;
+}
+.view-photos .views-field-title-1{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+/*
+.page-node-add-story .field-name-price,
+.page-node-edit.node-type-story .field-name-price{
+    display: none;
+}*/
+.album-photos-purchase .views-field-created,
+.album-photos-purchase .views-field-name, 
+.album-photos-purchase .views-field-field-price {
+    font-family: 'Oswald',sans-serif;
+    text-transform: uppercase;
+}
+.album-photos-purchase .views-field-created, 
+.album-photos-purchase .views-field-field-price .views-label-field-price{
+    float: left;
+    margin-right: 3px;
+}
+.view-photos.view-display-id-page_1 .views-field-field-price span{
+    float: left;
+    margin-right: 5px;
+}
+.view-photos.view-display-id-page_1 .views-field-field-price span.views-field-add-to-cart{
+    margin-left: 5px;
+    margin-right: 0;
+}
+.submitted-author .field .field-label {
+    float: left;
+}
+#subscribe {
+    padding-bottom: 20px;
+}
+.node-story .field-body {
+    clear: left;
+    padding-top: 20px;
+}
+.view-photos.view-display-id-page_1 .views-field-field-price {
+    color: #FF3000;
+    float: left;
+    padding: 10px 0;
+}
+.view-photos.view-display-id-page_1 .views-field-view-node {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#block-views-photos-album-block-3 .views-field-add-to-cart a{
+    margin-top: 0;
+    color: #FF3000;
+}
+.view-photos.view-display-id-page_2 h2.title a {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-right: 10px;
+}
+.view-photos.view-display-id-page_2 h2.title .views-field-view-node a{
+    font-size: 13px;
+}
+.view-photos .views-field-add-to-cart a {
+    color: #FF3000;
+    font-weight: normal;
+    text-transform: none;
+    margin-right: 10px;
+}
+.view-photos-album.view-display-id-block_3 .views-field-field-price {
+    color: #FF3000;
+    float: left;
+    padding: 0 5px 0 0;
+}
+.view-photos .views-field-add-to-cart {
+    float: right;
+}
+.album-photos-purchase .views-field-view-node a{
+    background: none repeat scroll 0 0 #FF3000;
+    color: #FFFFFF;
+    display: inline-block;
+    font-family: 'Oswald',sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    margin-right: 0;
+    padding: 3px 5px;
+    text-transform: uppercase;
+}
+#block-basic-cart-shopping-cart .basic-cart-cart-node-title{
+    width: 75%;
+    padding-right: 5px;
+}
+#block-basic-cart-shopping-cart .basic-cart-cart-unit-price{
+    float: right;
+}
+.album-photos-purchase .views-field-php .link-purchase a {
+    background: none repeat scroll 0 0 #FF3000;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: oswald;
+    font-size: 13px;
+    font-weight: bold;
+    padding:3px 5px;
+}
+.node-teaser h2.title a, .titlec a{
+    margin-right: 10px;
+}
+
+.node-content-wrapper .links a.read-more {
+    font-size: 13px;
+}
+.basic-cart-add-to-cart {
+    margin: 0;
+}
+.node-story .node-content-wrapper .content {
+    float: left;
+    margin-top: 10px;
+     margin-right: 20px;
+}
+.node-story .social-addtoany-bot {
+    float: left;
+    margin-top: 7px;
+}
+/* node-story */
+.node-story .field-video{
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+.view-photos-album .purchase-con{
+    display: none!important;
+    opacity: 0!important;
+}
+.fancybox-title .views-field-field-price .views-label-field-price{
+    float: left;
+    margin-right: 5px;
+}
+#user-register-form .form-item.form-item-I-agree input.form-checkbox{ 
+     float: left;
+      margin-right: 10px;
+}
+#user-register-form .form-item.form-item-I-agree label{ 
+     width: 90%;
+}
+#edit-field-location legend{
+     display: none!important;
+}
+#edit-field-business, 
+#edit-field-exclusive-offers, 
+#edit-field-community, 
+#edit-field-local-new-videos, 
+#edit-field-contests, 
+#edit-field-milton-villager-new-issues, 
+#edit-field-culture, 
+#edit-field-sports {
+    float: left;
+    width: 50%;
+}
+#edit-field-business input.form-checkbox, 
+#edit-field-exclusive-offers input.form-checkbox, 
+#edit-field-community input.form-checkbox, 
+#edit-field-local-new-videos input.form-checkbox, 
+#edit-field-contests input.form-checkbox, 
+#edit-field-milton-villager-new-issues input.form-checkbox, 
+#edit-field-culture input.form-checkbox, 
+#edit-field-sports input.form-checkbox {
+    float: left;
+    margin-right: 10px;
+}
+#edit-field-business label, 
+#edit-field-exclusive-offers label, 
+#edit-field-community label, 
+#edit-field-local-new-videos label, 
+#edit-field-contests label, 
+#edit-field-milton-villager-new-issues label, 
+#edit-field-culture label, 
+#edit-field-sports label {
+    width:  auto;
+}
+#user_user_form_group_optional_e_a{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+#user-register-form .form-item-I-agree input.form-checkbox.error{
+    box-shadow: 0 0 0 2px #FF0000;
+}
+#block-weather-system-1, 
+#block-weather-system-1 .block-inner{
+    display: none !important;
+    opacity: 0 !important;
+}
+.node-story .node-content-wrapper .submitted-author .field_post_by {
+    float: left;
+}
+.node-story .node-content-wrapper .submitted-author .full-name_photo,
+.node-story .node-content-wrapper .submitted-author .field_post_by {
+    display: inline-block;
+    margin-right: 20px;
+}
+.node-story .node-content-wrapper .submitted-author .field_post_by .field-name-field-post-by {
+     display: inline-block;
+    font-weight: bold;
+    padding-left: 5px;
+}
+.node-story .node-content-wrapper .submitted-author .full-name_photo .field-name-field-photos-by {
+    float: right;
+    padding-left: 5px;
+    font-weight: bold;
+}
+/*views-photos-album*/
+.view-photos-album .item-list ul.pager li a{
+    text-transform: uppercase;
+}
+.view-photos-album .item-list ul.pager{
+    margin-bottom: -30px;
+    margin-top: 20px
+}
+.view-photos-album .imagebox a.fa-first{
+    float: left;
+    margin-right: 10px;
+}
+.view-photos-album .imagebox span.tit-lin{
+    clear: both;
+    display: block;
+    height: 5px;
+    overflow: hidden;
+}
+#block-views-photos-album-block .view-photos-album .imagebox {
+        margin-bottom: 12px;
+}
+/*front */
+.view-display-id-page_1 .views-field-name,
+.view-display-id-page_1 .views-field-created,
+.front .views-row .submitted {
+    display: none;
+}
+
+#block-block-6 p {
+    padding: 0;
+}
+.fancybox-overlay .fancybox-title-inside-wrap{
+    padding-bottom: 15px;
+}
+.fancybox-overlay .fancybox-title-inside-wrap .views-field-field-price {
+    float: left;
+    width: 45%;
+}
+.fancybox-overlay .fancybox-title-inside-wrap .views-field-add-to-cart{
+    float: right;
+}
+.fancybox-overlay .fancybox-title-inside-wrap .views-field-add-to-cart a.basic-cart-add-to-cart-link {
+    background: none repeat scroll 0 0 #FF3000;
+    color: #FFFFFF;
+    padding: 3px 5px;
+}
+.fancybox-overlay .fancybox-title .field-content {
+    font-weight: bold;
+}
+/*social*/
+.field-name-field-social .addthis_default_style a.addthis_button_google_plusone {
+     margin: 0 3px!important;
+     width: 70px;
+}
+#block-block-14 {
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+}
+.field-name-field-social .addthis_default_style a.addthis_button_facebook_like{
+    width: 90px;
+}
+/*magazine*/
+.view-magazine .views-row img {
+    height: auto;
+    width: 100%;
+}
+.view-issues .views-row .views-field-field-print-issue
+.view-magazine .views-row .views-field-field-print-issue{
+    padding-top: 10px;
+}
+.view-issues .views-row .views-field-field-print-issue span.views-label-field-print-issue,
+.view-magazine .views-row .views-field-field-print-issue span.views-label-field-print-issue {
+    float: left;
+    
+}
+/*issues*/
+.view-magazine .views-row .views-field-field-print-issue,
+.view-issues .views-row .views-field-field-print-issue {
+        margin-left: 5%;
+        font-size: 20px;
+        font-weight: bold;
+}
+.view-magazine .views-row .views-field-field-print-issue{
+    padding-top: 10px;
+}
+.view-issues .views-row {
+    background: url("../images/bg_bot.png") repeat-x scroll 0 bottom rgba(0, 0, 0, 0);
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 3%;
+    padding-bottom: 20px;
+    width: 30%;
+}
+/*Primary tabs*/
+.user-block.showed{
+    display: block!important;
+}
+.user-block.notshowed{
+    display: none !important;
+}
+/*event*/
+.node-event .field-type-image img {
+    display: inline;
+}
+.fb-like-box.fb_iframe_widget span{
+    width: 100%!important;
+}
+.fb-like-box.fb_iframe_widget span iframe{
+    width: 100%!important;
+}
+.fb-like-box.fb_iframe_widget iframe ._4s7c{
+    width: 100%!important;
+}
